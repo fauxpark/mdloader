@@ -23,12 +23,5 @@ SET(SOURCES ${SOURCES}
 )
 endif()
 
-if (MSVC) 
-SET(SOURCES ${SOURCES} 
-    getopt/getopt.c
-)
-include_directories("getopt/")
-endif()
-
 add_executable(mdloader ${SOURCES})
 install(TARGETS mdloader DESTINATION bin)
