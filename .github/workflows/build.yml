@@ -26,7 +26,8 @@ jobs:
       run: |
         cmake -GNinja -DCMAKE_BUILD_TYPE=Release .
         cmake --build .
-        7z a ./build/mdloader-${RUNNER_OS}.zip mdloader.exe
+        DESTDIR=build cmake --install .
+        7z a ./build/mdloader-${RUNNER_OS}.zip build/bin/mdloader*
 
     - uses: actions/upload-artifact@v2
       with:
