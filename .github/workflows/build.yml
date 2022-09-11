@@ -25,10 +25,9 @@ jobs:
     - name: Compile and Package
       shell: bash
       run: |
-        cmake -GNinja -DCMAKE_BUILD_TYPE=Release .
-        cmake --build .
-        DESTDIR=build cmake --install .
-        7z a ./build/mdloader-${RUNNER_OS}.zip build/bin/mdloader*
+        cmake -S . -B build
+        cd build && make
+        7z a ./build/mdloader-${RUNNER_OS}.zip build/mdloader*
 
     - uses: actions/upload-artifact@v2
       with:
