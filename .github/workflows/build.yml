@@ -26,7 +26,7 @@ jobs:
       shell: bash
       run: |
         cmake -S . -B build
-        cd build && make
+        cd build && cmake --build .
         7z a ./mdloader-${RUNNER_OS}.zip mdloader*
 
     - uses: actions/upload-artifact@v2
