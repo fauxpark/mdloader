@@ -55,10 +55,11 @@ Massdrop keyboard's featuring Microchip's SAM-BA bootloader.
 
 ## Building
 
-Enter mdloader directory where Makefile is located and execute:
+Enter mdloader directory where `CMakeLists.txt` is located and execute:
 
 ```
-make
+cmake -B build
+cmake --build build
 ```
 
 This will create a `build` directory with the compiled executable. Run `./build/mdloader` to test.
